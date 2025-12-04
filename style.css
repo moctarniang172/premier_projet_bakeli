@@ -7,12 +7,14 @@ font-family: Arial, sans-serif;}
 
 .navbar{
  width: 100%;
- position: fixed;  
-    display: flex;
-    justify-content: space-between;
-   background: -webkit-linear-gradient(315deg,#73a5ff,#5477f5);
-    align-items: center;
-    height: 80px;
+ height: 80px;
+display: flex;
+justify-content: space-between;
+background: -webkit-linear-gradient(315deg,#73a5ff,#5477f5);
+align-items: center;
+padding-bottom: 10px;
+position: fixed;
+
    
  
 }
@@ -311,136 +313,555 @@ footer{
 }
 
 
-@media (max-width: 670px) {
+/* ==================== STYLES RESPONSIVE ==================== */
+
+/* 1. TABLETTES (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    /* Header */
+    header .p1 {
+        font-size: 26px;
+        margin-left: 30px;
+        padding-top: 150px;
+    }
+    
+    header .btn-header {
+        margin-left: 30px;
+    }
+    
+    /* Sections propos */
+    .section-1, .section-2 {
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .section-2 {
+        margin-left: 0;
+    }
+    
+    .image-1 img {
+        width: 90%;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    /* Activités et membres */
+    .activite .cartes,
+    .cartes-membre {
+        margin-left: 40px;
+        padding-left: 0;
+        justify-content: center;
+    }
+    
+    .activite .cartes .carte,
+    .cartes-membre .carte-membre {
+        width: 45%;
+        min-width: 300px;
+        height: auto;
+        min-height: 250px;
+    }
+    
+    .activite .btn-activite {
+        margin-left: 80%;
+    }
+    
+    /* Contact */
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-image img {
+        width: 90%;
+        margin-left: 5%;
+        height: auto;
+    }
+    
+    .contact-form {
+        width: 90%;
+        margin: 30px auto;
+    }
+    
+    .contact-section button {
+        margin-left: 75%;
+    }
+    
+    .contact-section h2,
+    .activite .titre-activite {
+        margin-left: 30px;
+    }
+    
+    .activite hr,
+    .contact-section hr {
+        margin-left: 30px;
+        width: 85%;
+    }
+}
+
+/* 2. TABLETTES (600px - 768px) */
+@media screen and (max-width: 768px) {
     /* --- NAVIGATION BAR (Navbar) --- */
     .navbar {
         flex-direction: column; /* Empile les éléments */
         height: auto; /* Hauteur ajustée */
-        padding-bottom: 10px;
+        padding: 15px 20px;
+        position: relative;
     }
 
     .navbar h2 {
         margin: 10px 0; /* Centre le titre */
+        text-align: center;
+        margin-left: 0;
+        font-size: 1.8rem;
     }
 
     .navbar nav ul {
         flex-direction: column; /* Empile les liens */
         gap: 10px;
-        margin-top: 0;
+        margin-top: 15px;
         text-align: center;
+        width: 100%;
     }
 
     .navbar nav ul li a {
         display: block; /* Rend la zone cliquable plus grande */
-        padding: 5px 0;
+        padding: 10px 0;
+        font-size: 1.1rem;
+    }
+
+    .navbar nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        width: auto;
+        padding: 10px 20px;
+        border-radius: 5px;
     }
 
     .navbar .button {
         display: flex;
         justify-content: center;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 15px;
     }
     
-    .navbar .button .btn-1, .btn-2 {
-        margin: 5px;
+    .navbar .button .btn-1, .navbar .button .btn-2 {
+        margin: 5px 10px;
         width: 45%;
-        height: 40px;
+        max-width: 150px;
+        height: 45px;
+        font-size: 1rem;
     }
-
-    /* --- HEADER (Bannière) --- */
+    
+    /* Header */
     header {
-        height: 60vh; /* Réduit la hauteur */
-        margin-top: 0; /* Important si vous avez changé la hauteur de la navbar */
-        text-align: center;
+        height: 70vh;
+        margin-top: 0;
+        padding-top: 150px;
     }
-
+    
     header .p1 {
-        margin-left: 0;
-        padding-top: 100px; /* Réduit le padding pour centrer */
-        font-size: 24px;
+        font-size: 22px;
+        margin-left: 20px;
+        padding-top: 50px;
+        text-align: center;
     }
     
     header .btn-header {
-        margin-left: 0;
-        width: 100px;
-        height: 40px;
+        margin: 20px auto;
+        display: block;
+        width: 150px;
     }
-
-    /* --- SECTION A PROPOS --- */
+    
+    /* Sections propos */
     .propos {
-        flex-direction: column; /* Empile les sections */
-    }
-
-    .section-1, .section-2 {
-        flex: none;
-        width: 90%;
-        margin: 0 auto;
-        padding: 20px 0;
+        flex-direction: column;
+        margin-top: 30px;
     }
     
-    .image-1 img {
-        width: 100%;
-        margin-top: 20px;
-    }
-    
-    .titre-1, .titre-activite, .contact-section h2 {
+    .section-1 {
         margin-left: 0;
-        text-align: center;
+        padding: 20px;
+        width: 100%;
     }
     
     .description-1 {
-        text-align: justify;
+        margin-top: 0;
+        padding: 0 10px;
     }
     
-    /* --- SECTION ACTIVITE --- */
-    .activite .cartes {
-        flex-direction: column; /* Empile les cartes */
-        margin-left: 0;
-        align-items: center;
+    .titre-1 {
+        margin-top: 0;
+        text-align: center;
+        font-size: 1.8rem;
     }
-
-    .activite .cartes .carte {
+    
+    .image-1 img {
         width: 90%;
-        height: auto; /* Laisse la hauteur s'ajuster au contenu */
+        margin: 30px auto;
+        display: block;
+    }
+    
+    /* Cartes activités et membres */
+    .activite .cartes,
+    .cartes-membre {
+        margin-left: 0;
+        padding-left: 0;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .activite .cartes .carte,
+    .cartes-membre .carte-membre {
+        width: 80%;
+        margin: 0 auto;
+        height: auto;
+    }
+    
+    /* Cartes membres - disposition verticale */
+    .activite .cartes .carte {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .activite .cartes .carte .image {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .activite .cartes .carte .image img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+    
+    .activite .cartes .carte .description {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
     }
     
     .activite .btn-activite {
-        margin-left: 5%; /* Aligne mieux le bouton */
-        width: 90%;
+        margin: 30px auto;
+        display: block;
+        width: 150px;
     }
-
-    /* --- SECTION CONTACT --- */
-    .contact-container {
-        flex-direction: column; /* Empile l'image et le formulaire */
+    
+    /* Contact */
+    .contact-section h2,
+    .activite .titre-activite {
+        margin-left: 0;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    
+    .activite hr,
+    .contact-section hr {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+    }
+    
+    .contact-section button {
+        margin: 20px auto;
+        display: block;
+        width: 150px;
     }
     
     .contact-image img {
         width: 90%;
-        height: auto;
-        margin: 20px auto;
+        margin: 0 auto;
+        display: block;
+        height: 300px;
+        object-fit: cover;
     }
-
+    
     .contact-form {
         width: 90%;
-        margin: 20px auto;
+        margin: 30px auto;
+    }
+}
+
+/* 3. TÉLÉPHONES (480px - 600px) */
+@media screen and (max-width: 600px) {
+    /* Navbar */
+    .navbar {
+        padding: 10px 15px;
+    }
+    
+    .navbar h2 {
+        font-size: 1.5rem;
+    }
+    
+    .navbar nav ul li a {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+    
+    .navbar .button .btn-1, .navbar .button .btn-2 {
+        width: 140px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    /* Header */
+    header {
+        height: 60vh;
+        padding-top: 200px;
+    }
+    
+    header .p1 {
+        font-size: 18px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 20px;
+    }
+    
+    header .btn-header {
+        width: 140px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    /* Titres */
+    .titre-1,
+    .titre-2,
+    .activite .titre-activite,
+    .contact-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Textes */
+    .description-1 {
+        font-size: 1rem;
+        padding: 0 5px;
+    }
+    
+    /* Cartes */
+    .activite .cartes .carte,
+    .cartes-membre .carte-membre {
+        width: 90%;
         padding: 15px;
     }
     
-    .contact-section button {
-        margin-left: 0;
-        width: 100%; /* Le bouton prend toute la largeur */
+    .cartes-membre .carte-membre p,
+    .activite .cartes .carte p {
+        font-size: 0.9rem;
     }
+    
+    /* Contact */
+    .contact-form {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .contact-image img {
+        height: 250px;
+    }
+}
 
-    /* --- FOOTER --- */
-    footer {
-        height: auto;
-        padding: 20px;
+/* 4. PETITS TÉLÉPHONES (jusqu'à 480px) */
+@media screen and (max-width: 480px) {
+    /* Navbar */
+    .navbar {
+        padding: 8px 10px;
     }
+    
+    .navbar h2 {
+        font-size: 1.3rem;
+    }
+    
+    .navbar nav ul {
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    .navbar nav ul li a {
+        font-size: 0.9rem;
+        padding: 6px 0;
+    }
+    
+    .navbar .button {
+        margin-top: 10px;
+    }
+    
+    .navbar .button .btn-1, .navbar .button .btn-2 {
+        width: 120px;
+        height: 35px;
+        font-size: 0.8rem;
+        margin: 5px;
+    }
+    
+    /* Header */
+    header {
+        height: 50vh;
+        padding-top: 180px;
+    }
+    
+    header .p1 {
+        font-size: 16px;
+    }
+    
+    header .btn-header {
+        width: 130px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+    
+    /* Titres */
+    .titre-1,
+    .titre-2,
+    .activite .titre-activite,
+    .contact-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    /* Textes */
+    .description-1 {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Cartes */
+    .activite .cartes .carte,
+    .cartes-membre .carte-membre {
+        width: 95%;
+        padding: 12px;
+    }
+    
+    /* Images dans cartes membres */
+    .activite .cartes .carte .image img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* Boutons Voir plus */
+    .activite .btn-activite {
+        width: 120px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+    
+    /* Contact */
+    .contact-section button {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    
+    input, textarea {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    footer {
+        height: 100px;
+        padding-top: 20px;
+    }
+}
+
+/* 5. TRÈS PETITS ÉCRANS (moins de 360px) */
+@media screen and (max-width: 360px) {
+    .navbar h2 {
+        font-size: 1.2rem;
+    }
+    
+    .navbar nav ul li a {
+        font-size: 0.85rem;
+    }
+    
+    .navbar .button .btn-1, .navbar .button .btn-2 {
+        width: 110px;
+        height: 32px;
+        font-size: 0.75rem;
+    }
+    
+    header .p1 {
+        font-size: 14px;
+    }
+    
+    .titre-1,
+    .titre-2,
+    .activite .titre-activite,
+    .contact-section h2 {
+        font-size: 1.2rem;
+    }
+    
+    .activite .cartes .carte,
+    .cartes-membre .carte-membre {
+        width: 98%;
+        padding: 10px;
+    }
+    
+    .contact-form {
+        padding: 12px;
+    }
+}
+
+/* 6. CORRECTION POUR LA NAVBAR FIXE */
+/* Compenser l'espace de la navbar */
+
+@media screen and (max-width: 600px) {
+    body {
+        padding-top: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding-top: 160px;
+    }
+}
+
+/* 7. AMÉLIORATIONS VISUELLES */
+/* Assurer la lisibilité des liens */
+.navbar nav ul li a {
+    transition: all 0.3s ease;
+}
+
+/* Centrer les éléments */
+@media screen and (max-width: 768px) {
+    .propos, .activite, .contact-section {
+        text-align: center;
+    }
+    
+    .section-2 {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .section-2 img {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* 8. AJUSTEMENTS DES MARGES/PADDING */
+@media screen and (max-width: 768px) {
+    .propos {
+        padding: 20px 10px;
+    }
+    
+    .activite {
+        padding: 30px 10px;
+    }
+    
+    .contact-section {
+        padding: 30px 10px;
+    }
+}
+
+/* 9. ASSURER QUE LES IMAGES SONT RESPONSIVES */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 
 
-
-
-  
+   
